@@ -56,65 +56,75 @@
 
             <!-- 4 Repeated Shared Wallet Items -->
             <v-row class="align-center mb-3 mt-2">
-              <v-img
+              <div>
+                <v-img
                 :src="walletIcon"
                 alt="Wallet Icon"
                 width="22"
                 height="22"
                 class="me-3"
               />
+              </div>
               <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Shared Wallet</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <v-img
+              <div>
+                <v-img
                 :src="seller"
                 alt="seller"
                 width="22"
                 height="22"
                 class="me-3"
               />
+              </div>
               <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Seller Profile</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <v-img
+              <div>
+                <v-img
                 :src="invoice"
                 alt="invoice"
                 width="22"
                 height="22"
                 class="me-3"
               />
+              </div>
               <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
                 <span class="text-sm font-weight-medium">Create an Invoice</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <v-img
+              <div>
+                <v-img
                 :src="personal"
                 alt="personal"
                 width="22"
                 height="22"
                 class="me-3"
               />
+              </div>
               <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Personal Profile</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <v-img
+              <div>
+                <v-img
                 :src="fund"
                 alt="fund"
                 width="22"
                 height="22"
                 class="me-3"
               />
+              </div>
               <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
                 <span class="text-sm font-weight-medium">Create a Fundraiser</span>
               </v-sheet>
