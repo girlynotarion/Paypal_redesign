@@ -5,29 +5,19 @@
     style="min-height: 100vh; background-color: #f3f4f6"
   >
     <div class="phone-frame">
+      <!-- Header -->
+      <div class="header-bar d-flex align-center justify-center position-relative">
+        <!-- Back Arrow -->
+        <v-img
+          :src="back"
+          alt="Back"
+          class="back-arrow position-absolute start-0 ml-4"
+          @click="goBack"
+        ></v-img>
+        <!-- Title -->
+        <h1 class="text-white text-lg font-bold m-0">Paypal</h1>
+      </div>
       <v-sheet color="#ffffff" height="100%" rounded="xl" class="d-flex flex-column">
-
-        <!-- Header -->
-        <div>
-          <v-row class="align-center px-5 pb-1 mt-5">
-            <v-btn
-              icon
-              variant="text"
-              @click="goBack"
-              class="ma-0 pa-0 no-hover"
-              :ripple="false"
-              elevation="0"
-              style="background-color: transparent !important;"
-            >
-              <v-img
-                :src="back"
-                alt="Back"
-                width="20"
-                height="20"
-              />
-            </v-btn>
-          </v-row>
-        </div>
 
         <!-- Navigation Tabs -->
         <div>
@@ -43,7 +33,7 @@
         <div>
           <v-container class="main">
             <!-- Request From -->
-            <p class="text-subtitle-3 font-weight-medium mb-2">Request payment from</p>
+            <p class="text-subtitle-3 font-weight-bold mb-2">Request payment from</p>
             <v-text-field
               placeholder="Name / Username / Email / Mobile"
               variant="outlined"
@@ -52,11 +42,11 @@
             ></v-text-field>
 
             <!-- More Ways to Request -->
-            <p class="text-subtitle-2 font-weight-medium mb-2">More ways to request</p>
+            <p class="text-subtitle-4 font-weight-bold mb-2">More ways to request</p>
 
             <!-- 4 Repeated Shared Wallet Items -->
             <v-row class="align-center mb-3 mt-2">
-              <div>
+              <div class="mx-3 my-3">
                 <v-img
                 :src="walletIcon"
                 alt="Wallet Icon"
@@ -65,13 +55,13 @@
                 class="me-3"
               />
               </div>
-              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+              <v-sheet class="flex-grow-1 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Shared Wallet</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <div>
+              <div class="mx-3 my-3">
                 <v-img
                 :src="seller"
                 alt="seller"
@@ -80,13 +70,13 @@
                 class="me-3"
               />
               </div>
-              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+              <v-sheet class="flex-grow-1 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Seller Profile</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <div>
+              <div class="mx-3 my-3">
                 <v-img
                 :src="invoice"
                 alt="invoice"
@@ -95,13 +85,13 @@
                 class="me-3"
               />
               </div>
-              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+              <v-sheet class="flex-grow-1 rounded-lg">
                 <span class="text-sm font-weight-medium">Create an Invoice</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <div>
+              <div class="mx-3 my-3">
                 <v-img
                 :src="personal"
                 alt="personal"
@@ -110,13 +100,13 @@
                 class="me-3"
               />
               </div>
-              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+              <v-sheet class="flex-grow-1 rounded-lg">
                 <span class="text-sm font-weight-medium">Create Personal Profile</span>
               </v-sheet>
             </v-row>
 
             <v-row class="align-center mb-3">
-              <div>
+              <div class="mx-3 my-3">
                 <v-img
                 :src="fund"
                 alt="fund"
@@ -125,7 +115,7 @@
                 class="me-3"
               />
               </div>
-              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+              <v-sheet class="flex-grow-1 rounded-lg">
                 <span class="text-sm font-weight-medium">Create a Fundraiser</span>
               </v-sheet>
             </v-row>
@@ -179,5 +169,32 @@ function ToSend() {
   background-color: transparent !important;
   box-shadow: none !important;
   opacity: 1 !important;
+}
+
+.header-bar {
+  background-color: #1e40af; /* Blue */
+  padding: 12px;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.back-arrow {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1); /* Makes image white */
+}
+
+/* Optional tweak for absolute positioning */
+.position-absolute {
+  position: absolute;
+}
+
+.start-0 {
+  left: 0;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 </style>

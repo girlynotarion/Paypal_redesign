@@ -1,20 +1,22 @@
 <template>
   <div class="app-wrapper">
     <div class="phone-frame">
-      <v-container class="pa-4" fluid>
-        <!-- Back Arrow + Search Field on the same line -->
-        <v-row class="align-center mb-6 mt-2">
-          <!-- Back Arrow -->
-          <v-col cols="2" class="d-flex justify-start">
-            <v-img
-              :src="back"
-              alt="Back"
-              class="back-arrow"
-              @click="goBack"
-            ></v-img>
-          </v-col>
+      <!-- Header -->
+      <div class="header-bar d-flex align-center justify-center position-relative">
+        <!-- Back Arrow -->
+        <v-img
+          :src="back"
+          alt="Back"
+          class="back-arrow position-absolute start-0 ml-4"
+          @click="goBack"
+        ></v-img>
+        <!-- Title -->
+        <h1 class="text-white text-lg font-bold m-0">Paypal</h1>
+      </div>
 
-          <!-- Search Field -->
+      <v-container class="pa-4" fluid>
+        <!-- Back Arrow + Search Field on the same line (optional redundancy) -->
+        <v-row class="align-center mb-6 mt-2">
           <v-col cols="10">
             <v-text-field
               v-model="search"
@@ -26,7 +28,13 @@
               density="compact"
               color="grey-lighten-3"
               class="custom-search"
-            ></v-text-field>
+            >
+              <template #prepend-inner>
+                <div class="search-icon-wrapper">
+                  <img :src="look" alt="Search Icon" class="search-icon" />
+                </div>
+              </template>
+            </v-text-field>
           </v-col>
         </v-row>
 
@@ -59,11 +67,13 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import back from '@/assets/images/back.png'
 import searchIcon from '@/assets/images/contact-book.png' // Your custom icon
+import look from '@/assets/images/search.png' // Your custom icon
 
 const router = useRouter()
 const search = ref('')
@@ -112,6 +122,35 @@ const enableContacts = () => {
   border-radius: 999px !important;
   margin: 0;
   padding: 0;
+  width: 360px;
+}
+
+.header-bar {
+  background-color: #1e40af;
+  padding: 12px;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  position: relative;
+}
+
+.back-arrow {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1); /* Makes image white */
+}
+
+/* Optional tweak for absolute positioning */
+.position-absolute {
+  position: absolute;
+}
+
+.start-0 {
+  left: 0;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .enable-btn {
@@ -125,4 +164,16 @@ const enableContacts = () => {
   height: 20px;
   margin: 4px;
 }
+
+.search-icon-wrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
 </style>
