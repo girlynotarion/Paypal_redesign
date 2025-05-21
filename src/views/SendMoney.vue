@@ -2,27 +2,30 @@
   <div class="app-wrapper">
     <div class="phone-frame">
       <v-container class="pa-4" fluid>
-        <!-- Back Arrow and Search -->
-        <v-row class="align-center mb-6">
-          <v-col cols="1" class="d-flex align-center" style="width: auto;">
+        <!-- Back Arrow + Search Field on the same line -->
+        <v-row class="align-center mb-6 mt-2">
+          <!-- Back Arrow -->
+          <v-col cols="2" class="d-flex justify-start">
             <v-img
               :src="back"
               alt="Back"
               class="back-arrow"
               @click="goBack"
-              width="20"
-              height="20"
-            />
+            ></v-img>
           </v-col>
-          <v-col cols="11">
+
+          <!-- Search Field -->
+          <v-col cols="10">
             <v-text-field
               v-model="search"
               placeholder="Name, username or email"
-              variant="solo"
+              variant="solo-filled"
               flat
               hide-details
               rounded
               density="compact"
+              color="grey-lighten-3"
+              class="custom-search"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -30,17 +33,23 @@
         <!-- Text Content -->
         <v-row justify="center" class="text-center">
           <v-col cols="12">
-            <h2 class="font-weight-bold">Let’s find your contacts</h2>
+            <h2 class="font-weight-bold mb-2">Let’s find your contacts</h2>
             <p class="text-subtitle-1 mt-2 mb-6">
               Search by name, username, email, phone, or by enabling your contacts.
             </p>
+
+            <!-- Button with image icon on the left -->
             <v-btn
               variant="text"
               color="primary"
-              class="text-capitalize"
+              class="text-capitalize enable-btn"
               @click="enableContacts"
             >
-              <v-icon start>mdi-account-box</v-icon>
+              <v-img
+                :src="searchIcon"
+                alt="Icon"
+                class="btn-icon"
+              ></v-img>
               Enable your contacts
             </v-btn>
           </v-col>
@@ -50,44 +59,31 @@
   </div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import back from '@/assets/images/back.png'
+import searchIcon from '@/assets/images/contact-book.png' // Your custom icon
 
-  
-  <script setup>
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
-  import back from '@/assets/images/back.png'
-  
-  const router = useRouter()
-  const recipient = ref('')
-  const amount = ref('')
-  const note = ref('')
-  
-  function sendMoney() {
-    if (recipient.value && amount.value) {
-      alert(`Sent $${amount.value} to ${recipient.value}`)
-      router.push('/dashboard')
-    } else {
-      alert('Please fill in recipient and amount.')
-    }
-  }
+const router = useRouter()
+const search = ref('')
 
-  const goBack = () => {
+const goBack = () => {
   router.push('/dashboard')
 }
 
 const enableContacts = () => {
-  // Logic to request contact access
   console.log('Enable contacts clicked')
 }
-  </script>
+</script>
 
 <style scoped>
 .app-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full height of viewport */
-  background-color: #f5f5f5; /* Optional background */
+  height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .phone-frame {
@@ -100,8 +96,33 @@ const enableContacts = () => {
 }
 
 .back-arrow {
-  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.search-wrapper {
+  background-color: #f0f0f0; /* Light gray */
+  border-radius: 999px;
+  padding: 2px 1px;
+}
+
+.custom-search {
+  background-color: transparent !important;
+  border-radius: 999px !important;
+  margin: 0;
+  padding: 0;
+}
+
+.enable-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  margin: 4px;
 }
 </style>
-
-  

@@ -75,32 +75,42 @@
               </v-card>
             </v-col>
           </v-row>
+          <br>
+          <br>
+            <!-- Back Button -->
+            <v-btn color="grey darken-1" block @click="goToDashboard">
+              Back to Dashboard
+            </v-btn>
         </v-main>
       </div>
     </div>
   </v-app>
 </template>
 
-<script>
-export default {
-  name: 'PayPalHome',
-  data() {
-    return {
-      viewMode: 'grid', // 'grid' or 'list'
-      cards: [
-        { title: 'Shopping' },
-        { title: 'Subscription' },
-        { title: 'Household' },
-      ],
-    };
-  },
-  methods: {
-    setView(mode) {
-      this.viewMode = mode;
-    },
-  },
-};
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const goToDashboard = () => {
+  router.push('/dashboard')
+}
+
+// Replace `data()` with refs
+const viewMode = ref('grid')
+const cards = ref([
+  { title: 'Shopping' },
+  { title: 'Subscription' },
+  { title: 'Household' }
+])
+
+// Replace methods with functions
+const setView = (mode) => {
+  viewMode.value = mode
+}
 </script>
+
+
 
 <style scoped>
 h3 {

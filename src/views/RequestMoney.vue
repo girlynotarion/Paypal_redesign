@@ -10,58 +10,117 @@
         <!-- Header -->
         <div>
           <v-row class="align-center px-5 pb-1 mt-5">
-          <v-btn icon variant="text" @click="goBack" class="ma-0 pa-0">
-            <v-img
-              :src="back"
-              alt="Back"
-              width="20"
-              height="20"
-            />
-          </v-btn>
-        </v-row>
+            <v-btn
+              icon
+              variant="text"
+              @click="goBack"
+              class="ma-0 pa-0 no-hover"
+              :ripple="false"
+              elevation="0"
+              style="background-color: transparent !important;"
+            >
+              <v-img
+                :src="back"
+                alt="Back"
+                width="20"
+                height="20"
+              />
+            </v-btn>
+          </v-row>
         </div>
 
         <!-- Navigation Tabs -->
-        <v-row class="nav">
-          <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
-          <v-btn variant="text" class="text-blue-darken-3 font-weight-bold" style="text-decoration: none;">Request</v-btn>
-          <v-btn variant="text" class="text-grey-darken-2">Contacts</v-btn>
-          <v-btn variant="text" class="text-grey-darken-2">More</v-btn>
-        </v-row>
-
         <div>
+          <v-row class="nav">
+            <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
+            <v-btn variant="text" class="text-blue-darken-3 font-weight-bold" style="text-decoration: none;">Request</v-btn>
+            <v-btn variant="text" class="text-grey-darken-2">Contacts</v-btn>
+            <v-btn variant="text" class="text-grey-darken-2">More</v-btn>
+          </v-row>
+        </div>
+
         <!-- Main Content -->
-        <v-container class="main">
-          <!-- Request From -->
-          <p class="text-subtitle-2 font-weight-medium mb-1">Request payment from</p>
-          <v-text-field
-            placeholder="Name / Username / Email / Mobile"
-            variant="outlined"
-            rounded
-            class="mb-5"
-          ></v-text-field>
+        <div>
+          <v-container class="main">
+            <!-- Request From -->
+            <p class="text-subtitle-3 font-weight-medium mb-2">Request payment from</p>
+            <v-text-field
+              placeholder="Name / Username / Email / Mobile"
+              variant="outlined"
+              rounded
+              class="mb-2"
+            ></v-text-field>
 
-          <!-- More Ways to Request -->
-          <p class="text-subtitle-2 font-weight-medium mb-2">More ways to request</p>
+            <!-- More Ways to Request -->
+            <p class="text-subtitle-2 font-weight-medium mb-2">More ways to request</p>
 
-          <!-- Shared Wallet -->
-          <v-row class="align-center mb-3">
-            <v-avatar size="32" class="bg-blue-lighten-4 me-3" />
-            <v-sheet class="flex-grow-1 bg-grey-lighten-3 py-2 px-4 rounded-lg">
-              <span class="text-sm font-weight-medium">Create Shared Wallet</span>
-            </v-sheet>
-          </v-row>
+            <!-- 4 Repeated Shared Wallet Items -->
+            <v-row class="align-center mb-3 mt-2">
+              <v-img
+                :src="walletIcon"
+                alt="Wallet Icon"
+                width="22"
+                height="22"
+                class="me-3"
+              />
+              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+                <span class="text-sm font-weight-medium">Create Shared Wallet</span>
+              </v-sheet>
+            </v-row>
 
-          <!-- Placeholder Items -->
-          <v-row
-            v-for="i in 4"
-            :key="i"
-            class="align-center mb-3"
-          >
-            <v-avatar size="32" class="bg-blue-lighten-4 me-3" />
-            <v-sheet class="flex-grow-1 bg-grey-lighten-3 py-4 px-4 rounded-lg" />
-          </v-row>
-        </v-container>
+            <v-row class="align-center mb-3">
+              <v-img
+                :src="seller"
+                alt="seller"
+                width="22"
+                height="22"
+                class="me-3"
+              />
+              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+                <span class="text-sm font-weight-medium">Create Seller Profile</span>
+              </v-sheet>
+            </v-row>
+
+            <v-row class="align-center mb-3">
+              <v-img
+                :src="invoice"
+                alt="invoice"
+                width="22"
+                height="22"
+                class="me-3"
+              />
+              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+                <span class="text-sm font-weight-medium">Create an Invoice</span>
+              </v-sheet>
+            </v-row>
+
+            <v-row class="align-center mb-3">
+              <v-img
+                :src="personal"
+                alt="personal"
+                width="22"
+                height="22"
+                class="me-3"
+              />
+              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+                <span class="text-sm font-weight-medium">Create Personal Profile</span>
+              </v-sheet>
+            </v-row>
+
+            <v-row class="align-center mb-3">
+              <v-img
+                :src="fund"
+                alt="fund"
+                width="22"
+                height="22"
+                class="me-3"
+              />
+              <v-sheet class="flex-grow-1 bg-grey-lighten-4 py-2 px-4 rounded-lg">
+                <span class="text-sm font-weight-medium">Create a Fundraiser</span>
+              </v-sheet>
+            </v-row>
+
+          </v-container>
         </div>
 
       </v-sheet>
@@ -72,6 +131,11 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import back from '@/assets/images/back.png'
+import walletIcon from '@/assets/images/people.png'
+import seller from '@/assets/images/seller.png'
+import invoice from '@/assets/images/bill.png'
+import personal from '@/assets/images/user.png'
+import fund from '@/assets/images/fundraiser.png'
 
 const router = useRouter()
 
@@ -101,5 +165,9 @@ function ToSend() {
   margin-top: 25px;
 }
 
-
+.no-hover:hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
 </style>
