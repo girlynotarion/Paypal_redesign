@@ -13,6 +13,16 @@
         <!-- Title -->
         <h1 class="text-white text-lg font-bold m-0">Paypal</h1>
       </div>
+            <!-- Navigation Tabs -->
+        <div>
+          <v-row class="nav">
+                        <!-- Active tab indicator for 'Request' -->
+            <div style="border-bottom: 2px solid #1e3a8a; color: #1e3a8a; font-weight: bold; padding: 6px 16px;">
+              Send
+            </div>
+            <v-btn variant="text" class="text-grey-darken-2" @click="ToRequest">Request</v-btn>
+          </v-row>
+        </div>
 
       <v-container class="pa-4" fluid>
         <!-- Back Arrow + Search Field on the same line (optional redundancy) -->
@@ -84,6 +94,10 @@ const goBack = () => {
 
 const enableContacts = () => {
   console.log('Enable contacts clicked')
+}
+
+function ToRequest() {
+  router.push('/RequestMoney')
 }
 </script>
 
@@ -174,6 +188,11 @@ const enableContacts = () => {
 .search-icon {
   width: 20px;
   height: 20px;
+}
+
+.nav {
+  margin: 5px;
+  margin-top: 25px;
 }
 
 </style>

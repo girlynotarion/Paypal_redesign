@@ -23,9 +23,11 @@
         <div>
           <v-row class="nav">
             <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
-            <v-btn variant="text" class="text-blue-darken-3 font-weight-bold" style="text-decoration: none;">Request</v-btn>
-            <v-btn variant="text" class="text-grey-darken-2">Contacts</v-btn>
-            <v-btn variant="text" class="text-grey-darken-2">More</v-btn>
+
+            <!-- Active tab indicator for 'Request' -->
+            <div style="border-bottom: 2px solid #1e3a8a; color: #1e3a8a; font-weight: bold; padding: 6px 16px;">
+              Request
+            </div>
           </v-row>
         </div>
 
@@ -44,21 +46,23 @@
             <!-- More Ways to Request -->
             <p class="text-subtitle-4 font-weight-bold mb-2">More ways to request</p>
 
-            <!-- 4 Repeated Shared Wallet Items -->
-            <v-row class="align-center mb-3 mt-2">
-              <div class="mx-3 my-3">
-                <v-img
-                :src="walletIcon"
-                alt="Wallet Icon"
-                width="22"
-                height="22"
-                class="me-3"
-              />
-              </div>
-              <v-sheet class="flex-grow-1 rounded-lg">
-                <span class="text-sm font-weight-medium">Create Shared Wallet</span>
-              </v-sheet>
-            </v-row>
+            <router-link to="/SharedWallet" class="no-decoration">
+              <v-row class="align-center mb-3 mt-2">
+                <div class="mx-3 my-3">
+                  <v-img
+                    :src="walletIcon"
+                    alt="Wallet Icon"
+                    width="22"
+                    height="22"
+                    class="me-3"
+                  />
+                </div>
+                <v-sheet class="flex-grow-1 rounded-lg">
+                  <span class="text-sm font-weight-medium">Create Shared Wallet</span>
+                </v-sheet>
+              </v-row>
+            </router-link>
+
 
             <v-row class="align-center mb-3">
               <div class="mx-3 my-3">
@@ -197,4 +201,12 @@ function ToSend() {
 .ml-4 {
   margin-left: 1rem;
 }
+
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+}
+
 </style>

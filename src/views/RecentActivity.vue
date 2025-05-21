@@ -21,7 +21,7 @@
                 <template #activator="{ props }">
                   <img
                     v-bind="props"
-                    src="@/assets/images/grid.png"
+                    src="@/assets/images/list.png"
                     alt="Menu"
                     style="width: 32px; height: 32px; cursor: pointer; object-fit: contain;"
                   />

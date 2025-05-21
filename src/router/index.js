@@ -10,7 +10,7 @@ import Verification from '../views/Verification.vue'
 import Profile from '../views/Profile.vue'
 import SplashScreen from '../views/SplashScreen.vue'
 import RequestMoney from '../views/RequestMoney.vue'
-
+import SharedWallet from '../views/SharedWallet.vue'
 
 const routes = [
   {
@@ -71,6 +71,11 @@ const routes = [
     path: '/SplashScreen',
     name: 'SplashScreen',
     component: SplashScreen,
+  },
+  {
+    path: '/SharedWallet',
+    name: 'SharedWallet',
+    component: SharedWallet,
   },
 ]
 

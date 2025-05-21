@@ -47,10 +47,10 @@ import profilePic from '@/assets/images/rose.jpg'
           <!-- PayPal Balance -->
           <v-card elevation="2" class="mb-4 text-center">
             <v-card-title class="text-h6">PayPal Balance</v-card-title>
-            <v-card-text class="text-h5 font-bold">$1,250.00</v-card-text>
+            <v-card-text class="text-h5 font-bold">₱1,250.00</v-card-text>
             <v-card-actions>
               <v-btn
-                color="light-blue lighten-1"
+                color="indigo-lighten-1"
                 block
                 height="50"
                 class="text-white"
@@ -63,24 +63,30 @@ import profilePic from '@/assets/images/rose.jpg'
 
           <!-- Smart Budgeting & Recent Activity -->
           <div class="smart">
-            <v-card elevation="2" class="mt-4">
+            <v-card elevation="2" class="mt-4 tall-card">
             <v-card-text>
               <v-row dense>
                 <v-col cols="12">
-                  <v-btn color="indigo-lighten-1" block rounded @click="goToBudgeting">
+                  <v-btn color="blue-lighten-1" block rounded @click="goToBudgeting">
                     Smart Budgeting
                   </v-btn>
                 </v-col>
                 <v-col cols="12" class="mt-2">
-                  <v-btn color="deep-purple-lighten-1" block rounded @click="goToRecentActivity">
+                  <v-btn
+                    variant="outlined"
+                    color="blue-lighten-1"
+                    block
+                    rounded
+                    @click="goToRecentActivity"
+                  >
                     Recent Activity
                   </v-btn>
                 </v-col>
               </v-row>
             </v-card-text>
           </v-card>
-          </div>
         </div>
+      </div>
 
         <!-- Footer Buttons -->
         <div class="footer-bar px-4 py-3">
@@ -139,6 +145,7 @@ import profilePic from '@/assets/images/rose.jpg'
   transform: translateY(-50%);
   cursor: pointer;
 }
+
 
 
 </style>

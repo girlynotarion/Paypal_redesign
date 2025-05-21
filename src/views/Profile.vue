@@ -138,7 +138,6 @@ const goBack = () => {
   height: 844px;
   background-color: #ffffff;
   border-radius: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

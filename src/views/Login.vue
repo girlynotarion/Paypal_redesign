@@ -24,22 +24,27 @@ const login = () => {
         <!-- Form Content -->
         <v-container class="py-10">
           <h2 class="text-center text-xl font-semibold mb-6">Login</h2>
+            <v-form @submit.prevent="login">
+              <v-text-field v-model="email" label="Email" type="email" outlined dense class="mb-4" />
 
-          <v-form @submit.prevent="login">
-            <v-text-field v-model="email" label="Email" type="email" outlined dense class="mb-4" />
-            <v-text-field
-              v-model="password"
-              label="Password"
-              type="password"
-              outlined
-              dense
-              class="mb-6"
-            />
+              <v-text-field
+                v-model="password"
+                label="Password"
+                type="password"
+                outlined
+                dense
+                class="mb-2"
+              />
 
-            <v-btn color="blue-darken-3" block rounded class="text-white font-bold" @click="login">
-              Login
-            </v-btn>
-          </v-form>
+              <div class="text-right mb-6">
+                <span class="text-blue-grey-darken-1 text-sm">Forgot your password?</span>
+              </div>
+
+              <v-btn color="blue-darken-3" block rounded class="text-white font-bold" @click="login">
+                Login
+              </v-btn>
+            </v-form>
+
 
           <div class="text-center mt-4">
             <span>Don't have an account?</span>
