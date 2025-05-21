@@ -61,59 +61,90 @@
         <v-card class="mt-4 mx-4" elevation="1" rounded="lg">
           <v-list>
             <v-list-item>
-              <v-list-item-icon><v-icon>mdi-account-outline</v-icon></v-list-item-icon>
+              <template #prepend>
+                <v-icon color="black">mdi-account</v-icon>
+              </template>
               <v-list-item-title>Personal info</v-list-item-title>
             </v-list-item>
+
             <v-list-item>
-              <v-list-item-icon><v-icon>mdi-shield-lock-outline</v-icon></v-list-item-icon>
+              <template #prepend>
+                <v-icon color="black">mdi-lock</v-icon>
+              </template>
               <v-list-item-title>Login and security</v-list-item-title>
             </v-list-item>
+
             <v-list-item>
-              <v-list-item-icon><v-icon>mdi-eye-outline</v-icon></v-list-item-icon>
+              <template #prepend>
+                <v-icon color="black">mdi-shield-account</v-icon>
+              </template>
               <v-list-item-title>Data and Privacy</v-list-item-title>
             </v-list-item>
+
             <v-list-item>
-              <v-list-item-icon><v-icon>mdi-bell-cog-outline</v-icon></v-list-item-icon>
+              <template #prepend>
+                <v-icon color="black">mdi-bell</v-icon>
+              </template>
               <v-list-item-title>Notification Preferences</v-list-item-title>
             </v-list-item>
+
             <v-list-item>
-              <v-list-item-icon><v-icon>mdi-currency-usd</v-icon></v-list-item-icon>
+              <template #prepend>
+                <v-icon color="black">mdi-bullhorn</v-icon>
+              </template>
               <v-list-item-title>Marketing Preferences</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-card>
 
-        <!-- Message Center -->
-        <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
-          <v-list>
-            <v-list-item>
-              <v-list-item-icon><v-icon>mdi-message-text-outline</v-icon></v-list-item-icon>
-              <v-list-item-title>Message Center</v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-icon><v-icon>mdi-message-text-outline</v-icon></v-list-item-icon>
-              <v-list-item-title>Help</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-card>
 
-        <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
-          <v-list>
-            <v-list-item>
-              <v-list-item-icon><v-icon>mdi-message-text-outline</v-icon></v-list-item-icon>
-              <v-list-item-title>Close your account</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-card>
+          <!-- Message Center -->
+          <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
+            <v-list>
+              <v-list-item>
+                <template #prepend>
+                  <v-icon color="black">mdi-message-text</v-icon>
+                </template>
+                <v-list-item-title>Message Center</v-list-item-title>
+              </v-list-item>
+              <v-list-item>
+                <template #prepend>
+                  <v-icon color="black">mdi-help-circle</v-icon>
+                </template>
+                <v-list-item-title>Help</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-card>
 
-        <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
-          <v-list>
-            <v-list-item>
-              <v-list-item-icon><v-icon>mdi-message-text-outline</v-icon></v-list-item-icon>
-              <v-list-item-title>Log out</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-card>
+          <!-- Close your account -->
+          <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
+            <v-list>
+              <v-list-item>
+                <template #prepend>
+                  <v-icon color="black">mdi-account-remove</v-icon>
+                </template>
+                <v-list-item-title>Close your account</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-card>
+
+          <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
+            <v-list>
+              <v-list-item
+                role="button"
+                class="logout-btn"
+                @click="handleLogout"
+                ripple
+              >
+                <template #prepend>
+                  <v-icon color="black">mdi-logout</v-icon>
+                </template>
+                <v-list-item-title>Log out</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-card>
+
+
       </v-sheet>
     </div>
   </v-container>
@@ -125,11 +156,16 @@ const router = useRouter()
 import rose from '@/assets/images/rose.jpg' 
 import back from '@/assets/images/back.png'
 import notify from '@/assets/images/notice.png'
+import '@mdi/font/css/materialdesignicons.css'
+
 
 const goBack = () => {
   router.push('/dashboard')
 }
 
+const handleLogout = () => {
+  router.push('/Login')
+}
 </script>
 
 <style scoped>
@@ -139,12 +175,13 @@ const goBack = () => {
   background-color: #ffffff;
   border-radius: 1.5rem;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .phone-frame::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none;
 }
 
 
