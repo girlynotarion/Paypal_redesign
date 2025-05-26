@@ -144,12 +144,13 @@ import fund from '@/assets/images/fundraiser.png'
 const router = useRouter()
 
 function goBack() {
-  router.push('/dashboard')
+  router.push('/Request')
 }
 
 function ToSend() {
   router.push('/SendMoney')
 }
+
 </script>
 
 <style scoped>

@@ -37,6 +37,7 @@ import profilePic from '@/assets/images/rose.jpg'
           <v-btn
             icon
             class="menu-btn"
+            elevation="0"
             variant="plain"
           >
             <v-icon>mdi-menu</v-icon>
@@ -59,8 +60,7 @@ import profilePic from '@/assets/images/rose.jpg'
             <v-card-text class="text-h5 font-bold">₱1,250.00</v-card-text>
               <v-btn
                 height="40"
-                class="text-white custom-sky-button"
-                @click="transferFunds"
+                class="text-white custom-sky-button" ripple="false"
               >
                 Transfer Funds
               </v-btn>
@@ -68,11 +68,18 @@ import profilePic from '@/assets/images/rose.jpg'
 
           <!-- Smart Budgeting & Recent Activity -->
           <div class="smart">
-            <v-card elevation="2" class="mt-4 tall-card">
+            <v-card elevation="1" class="mt-4 tall-card">
             <v-card-text>
               <v-row dense>
                 <v-col cols="12">
-                  <v-btn color="blue-lighten-1" block rounded @click="goToBudgeting">
+                  <v-btn
+                    class="custom-fixed-btn"
+                    color="blue-lighten-1"
+                    block
+                    rounded
+                    :ripple="false"
+                    @click="goToBudgeting"
+                  >
                     Smart Budgeting
                   </v-btn>
                 </v-col>
@@ -82,6 +89,8 @@ import profilePic from '@/assets/images/rose.jpg'
                     color="blue-lighten-1"
                     block
                     rounded
+                    class="no-hover"
+                    ripple="false"
                     @click="goToRecentActivity"
                   >
                     Recent Activity
@@ -163,6 +172,11 @@ import profilePic from '@/assets/images/rose.jpg'
   transform: translateY(-50%);
   color: rgb(248, 244, 244);
 }
+.no-hover:hover {
+  background-color: inherit !important;
+  box-shadow: none !important;
+}
+
 
 
 </style>

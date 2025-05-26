@@ -16,7 +16,6 @@
             <!-- Navigation Tabs -->
         <div>
           <v-row class="nav">
-                        <!-- Active tab indicator for 'Request' -->
             <div style="border-bottom: 2px solid #1e3a8a; color: #1e3a8a; font-weight: bold; padding: 6px 16px;">
               Send
             </div>
@@ -25,7 +24,6 @@
         </div>
 
       <v-container class="pa-4" fluid>
-        <!-- Back Arrow + Search Field on the same line (optional redundancy) -->
         <v-row class="align-center mb-6 mt-2">
           <v-col cols="10">
             <v-text-field

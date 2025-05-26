@@ -32,10 +32,10 @@
       
       <!-- Shared Wallet Form -->
       <v-container class="px-4 py-4" fluid>
-        <h2 class="text-h6 font-weight-medium mb-4">Shared Wallet</h2>
+        <h2 class="text-h6 font-weight-medium mb-4">Share Wallet with</h2>
 
         <v-text-field
-          placeholder="Name/Username/Email/Mobile"
+          placeholder="Rosebell,Shaira, Shanny"
           variant="outlined"
           hide-details
           dense
