@@ -34,16 +34,6 @@
         <!-- Main Content -->
         <div>
           <v-container class="main">
-            <!-- Request From -->
-            <p class="text-subtitle-3 font-weight-bold mb-2">Request payment from</p>
-            <v-text-field
-              placeholder="Name / Username / Email / Mobile"
-              variant="outlined"
-              rounded
-              class="mb-2"
-            ></v-text-field>
-
-            <!-- More Ways to Request -->
             <p class="text-subtitle-4 font-weight-bold mb-2">More ways to request</p>
 
             <router-link to="/SharedWallet" class="no-decoration">

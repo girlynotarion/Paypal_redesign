@@ -12,11 +12,17 @@
         <h1 class="text-white text-lg font-bold m-0">Paypal</h1>
       </div>
 
-      <!-- Navigation Tabs -->
-      <v-row class="nav-tabs">
-        <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
-        <div class="active-tab">Request</div>
-      </v-row>
+        <!-- Navigation Tabs -->
+        <div>
+          <v-row class="nav">
+            <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
+
+            <!-- Active tab indicator for 'Request' -->
+            <div style="border-bottom: 2px solid #1e3a8a; color: #1e3a8a; font-weight: bold; padding: 6px 16px;">
+              Request
+            </div>
+          </v-row>
+        </div>
 
       <!-- Content -->
       <v-container class="pa-4 pt-2 pb-12" fluid>
@@ -154,6 +160,10 @@ function ToNext() {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.nav {
+  margin: 5px;
+  margin-top: 25px;
 }
 
 .active-tab {
