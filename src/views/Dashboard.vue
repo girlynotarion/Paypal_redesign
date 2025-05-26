@@ -20,7 +20,7 @@ const goToSend = () => {
 }
 
 const goToRequest = () => {
-  router.push('/RequestMoney')
+  router.push('/Request')
 }
 
 import profilePic from '@/assets/images/rose.jpg'
@@ -34,12 +34,21 @@ import profilePic from '@/assets/images/rose.jpg'
 
         <!-- Header -->
         <div class="header-bar position-relative d-flex justify-center align-center">
+          <v-btn
+            icon
+            class="menu-btn"
+            variant="plain"
+          >
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+
+
           <h1 class="text-white text-lg font-bold">Paypal</h1>
+
           <v-avatar size="34" class="profile-avatar" @click="router.push('/Profile')">
             <v-img :src="profilePic" alt="Profile" class="cursor-pointer" />
           </v-avatar>
         </div>
-
 
 
         <!-- Main Content -->
@@ -48,17 +57,13 @@ import profilePic from '@/assets/images/rose.jpg'
           <v-card elevation="2" class="mb-4 text-center">
             <v-card-title class="text-h6">PayPal Balance</v-card-title>
             <v-card-text class="text-h5 font-bold">₱1,250.00</v-card-text>
-            <v-card-actions>
               <v-btn
-                color="indigo-lighten-1"
-                block
-                height="50"
-                class="text-white"
+                height="40"
+                class="text-white custom-sky-button"
                 @click="transferFunds"
               >
                 Transfer Funds
               </v-btn>
-            </v-card-actions>
           </v-card>
 
           <!-- Smart Budgeting & Recent Activity -->
@@ -146,6 +151,18 @@ import profilePic from '@/assets/images/rose.jpg'
   cursor: pointer;
 }
 
+.custom-sky-button {
+  background-color: #445ea1; 
+  margin-bottom: 7px;
+}
+
+.menu-btn {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(248, 244, 244);
+}
 
 
 </style>

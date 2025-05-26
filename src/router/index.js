@@ -11,6 +11,8 @@ import Profile from '../views/Profile.vue'
 import SplashScreen from '../views/SplashScreen.vue'
 import RequestMoney from '../views/RequestMoney.vue'
 import SharedWallet from '../views/SharedWallet.vue'
+import Request from '../views/Request.vue'
+
 
 const routes = [
   {
@@ -76,6 +78,11 @@ const routes = [
     path: '/SharedWallet',
     name: 'SharedWallet',
     component: SharedWallet,
+  },
+  {
+    path: '/Request',
+    name: 'Request',
+    component: Request,
   },
 ]
 

@@ -13,14 +13,16 @@
         <!-- Title -->
         <h1 class="text-white text-lg font-bold m-0">Paypal</h1>
       </div>
-            <!-- Navigation Tabs -->
+
+        <!-- Navigation Tabs -->
         <div>
           <v-row class="nav">
-                        <!-- Active tab indicator for 'Request' -->
+            <v-btn variant="text" class="text-grey-darken-2" @click="ToSend">Send</v-btn>
+
+            <!-- Active tab indicator for 'Request' -->
             <div style="border-bottom: 2px solid #1e3a8a; color: #1e3a8a; font-weight: bold; padding: 6px 16px;">
-              Send
+              Request
             </div>
-            <v-btn variant="text" class="text-grey-darken-2" @click="ToRequest">Request</v-btn>
           </v-row>
         </div>
 
@@ -96,8 +98,8 @@ const enableContacts = () => {
   console.log('Enable contacts clicked')
 }
 
-function ToRequest() {
-  router.push('/Request')
+function ToSend() {
+  router.push('/SendMoney')
 }
 </script>
 

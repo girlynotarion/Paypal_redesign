@@ -6,9 +6,7 @@
   >
     <div class="phone-frame">
       <v-sheet color="#f3f4f6" class="pa-0" height="100%" rounded="xl">
-        <!-- Header -->
           <v-row class="align-center" justify="space-between">
-            <!-- Back icon as image -->
             <div>
               <v-img
               :src="back"
@@ -20,14 +18,12 @@
             />
             </div>
 
-            <!-- Title -->
             <div class="text-profile">
               <span class="font-bold text-lg mt-5 mb-3">
               <h3 class="m-0">Profile</h3>
             </span>
             </div>
 
-            <!-- Notification icon as image -->
             <div>
               <v-img
               :src="notify"
@@ -57,7 +53,6 @@
             </v-btn>
         </div>
 
-        <!-- Settings -->
         <v-card class="mt-4 mx-4" elevation="1" rounded="lg">
           <v-list>
             <v-list-item>
@@ -97,8 +92,6 @@
           </v-list>
         </v-card>
 
-
-          <!-- Message Center -->
           <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
             <v-list>
               <v-list-item>
@@ -116,7 +109,6 @@
             </v-list>
           </v-card>
 
-          <!-- Close your account -->
           <v-card class="mt-4 mx-4 mb-6" elevation="1" rounded="lg">
             <v-list>
               <v-list-item>
@@ -175,7 +167,7 @@ const handleLogout = () => {
   background-color: #ffffff;
   border-radius: 1.5rem;
   overflow-y: auto;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden; 
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
