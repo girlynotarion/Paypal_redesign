@@ -25,7 +25,7 @@
         </div>
 
       <!-- Content -->
-      <v-container class="pa-4 pt-2 pb-12" fluid>
+      <v-container class="pa-4 " fluid>
         <v-row class="align-center mb-6 mt-2">
           <v-col cols="10">
             <v-text-field
@@ -176,6 +176,11 @@ function ToNext() {
 .custom-search {
   background-color: transparent !important;
   border-radius: 999px !important;
+  background-color: transparent !important;
+  border-radius: 999px !important;
+  margin: 0;
+  padding: 0;
+  width: 360px;
 }
 
 .search-icon-wrapper {
