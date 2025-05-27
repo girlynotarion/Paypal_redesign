@@ -70,7 +70,7 @@
 
       <!-- Footer Button at Bottom Right -->
       <div class="footer-bar">
-        <v-btn color="primary" rounded height="50" width="120" @click="ToNext">
+        <v-btn color="primary" rounded height="50" width="120" @click="ToNext" elevation="0">
           Next
         </v-btn>
       </div>

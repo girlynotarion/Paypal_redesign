@@ -57,7 +57,7 @@
               block
               rounded
               class="text-white font-bold"
-              @click="goToVerify"
+              @click="goToVerify" elevation="0"
             >
               Sign Up
             </v-btn>

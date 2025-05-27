@@ -77,7 +77,7 @@ const goToDashboard = () => {
           </div>
 
           <!-- Back Button -->
-          <v-btn color="grey darken-1" block @click="goToDashboard">
+          <v-btn color="grey darken-1" block @click="goToDashboard" elevation="0">
             Back to Dashboard
           </v-btn>
         </v-container>

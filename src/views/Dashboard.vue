@@ -3,10 +3,6 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const transferFunds = () => {
-  alert("Transfer Funds clicked!")
-}
-
 const goToBudgeting = () => {
   router.push('/SmartBudgeting')
 }
@@ -37,8 +33,8 @@ import profilePic from '@/assets/images/rose.jpg'
           <v-btn
             icon
             class="menu-btn"
-            elevation="0"
             variant="plain"
+            elevation="0"
           >
             <v-icon>mdi-menu</v-icon>
           </v-btn>
@@ -77,7 +73,7 @@ import profilePic from '@/assets/images/rose.jpg'
                     color="blue-lighten-1"
                     block
                     rounded
-                    :ripple="false"
+                    elevation="0"
                     @click="goToBudgeting"
                   >
                     Smart Budgeting
@@ -90,7 +86,8 @@ import profilePic from '@/assets/images/rose.jpg'
                     block
                     rounded
                     class="no-hover"
-                    ripple="false"
+                    elevation="0"
+                    :ripple="false"
                     @click="goToRecentActivity"
                   >
                     Recent Activity
@@ -106,10 +103,11 @@ import profilePic from '@/assets/images/rose.jpg'
         <div class="footer-bar px-4 py-3">
           <v-row dense>
             <v-col cols="6">
-              <v-btn color="primary" block rounded height="50" size="large" @click="goToSend">Send Money</v-btn>
+              <v-btn color="primary" block rounded height="50" size="large" @click="goToSend" elevation="0"
+                    :ripple="false">Send Money</v-btn>
             </v-col>
             <v-col cols="6">
-              <v-btn color="primary" variant="outlined" block rounded height="50" size="large" @click="goToRequest">Request Money</v-btn>
+              <v-btn color="primary" variant="outlined" block rounded height="50" size="large" @click="goToRequest" elevation="0">Request Money</v-btn>
             </v-col>
           </v-row>
         </div>

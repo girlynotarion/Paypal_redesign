@@ -40,7 +40,7 @@ const login = () => {
                   <span class="text-blue-grey-darken-1 text-sm">Forgot your password?</span>
               </div>
 
-              <v-btn color="blue-darken-3" block rounded class="text-white font-bold" @click="login">
+              <v-btn color="blue-darken-3" block rounded class="text-white font-bold" @click="login" elevation="0">
                 Login
               </v-btn>
             </v-form>
